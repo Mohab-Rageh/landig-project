@@ -1,0 +1,156 @@
+:root[lang="en"] {
+  --f-f: "Plus Jakarta Sans", sans-serif;
+  --left-value: 0;
+  --right-value: auto;
+}
+
+:root[lang="ar"] {
+  --f-f: "Cairo", sans-serif;
+  --left-value: auto;
+  --right-value: 0;
+}
+
+/* Resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--f-f);
+  -webkit-tap-highlight-color: transparent;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: clamp(16px, 1.2vw, 24px);
+}
+
+button,
+input,
+textarea,
+select,
+option {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.not-scrolled {
+  background-color: rgba(255, 255, 255, 0);
+  transition: 2s;
+}
+
+.scrolled {
+  backdrop-filter: blur(5px);
+  background-color: rgba(212, 197, 197, 0.5);
+  transition: background-color 2s;
+}
+
+header .header-logo {
+  width: 100%;
+  height: 57px;
+  background-color: #fff;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 5px #33333354 inset;
+  cursor: pointer;
+}
+
+.nav__btns .lang-selector {
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+  border: none;
+  font-size: 12px;
+}
+
+.lang-selector:hover {
+  background-color: #33367c;
+  color: #fff;
+}
+
+.scroller {
+  position: fixed;
+  left: var(--left-value);
+  right: var(--right-value);
+  top: 0;
+  height: 3px;
+  width: 0;
+  border-radius: 4px;
+  background-color: #454887;
+  z-index: 999;
+}
+
+/* Styling Swiper */
+.swiper {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  overflow-x: hidden;
+  position: static;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 65%;
+}
+
+.swiper .card {
+  text-align: center;
+  transition: 0.3s;
+  padding: 0.5rem;
+  cursor: grabbing;
+}
+
+.swiper .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 5px #3333339c;
+  border-radius: 10px;
+}
+
+.swiper .card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.swiper-pagination {
+  top: 480px;
+}
+
+#swiper-2 .section-6-box-text {
+  margin-bottom: 1rem;
+}
+
+.swiper-pagination-bullet {
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: #007aff;
+  margin-top: 25px;
+}

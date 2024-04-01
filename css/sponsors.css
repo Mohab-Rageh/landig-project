@@ -1,0 +1,359 @@
+/* Custom Properties */
+:root[lang="en"] {
+  --p-t: 45px;
+  --p-d: -10000px;
+}
+
+:root[lang="ar"] {
+  --p-t: 42px;
+  --p-d: 10000px;
+}
+
+/* Components */
+.container {
+  width: clamp(335px, 88vw, 1600px);
+  padding: 1rem 0;
+  margin: 0 auto;
+}
+
+/* Utility Classes */
+.d-none {
+  display: none;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.fw-b {
+  font-weight: bold;
+}
+
+.btn-shape {
+  border-radius: 4px;
+  padding: 8px 16px;
+  line-height: 24px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.m-t-b {
+  margin: clamp(50px, 5.5vw, 100px) 0;
+}
+
+.m-b5 {
+  margin-bottom: 5px;
+}
+
+.m-b10 {
+  margin-bottom: 10px;
+}
+
+.m-b25 {
+  margin-bottom: 25px;
+}
+
+.c-red {
+  color: rgba(255, 0, 0, 0.459);
+}
+
+.c-lime-green {
+  color: rgba(50, 205, 50, 0.616);
+}
+
+.offscreen {
+  position: absolute;
+  left: var(--p-d);
+}
+
+/* The Content of the Page */
+.inter-face {
+  min-height: 100vh;
+  background-image: url(../imgs/people-taking-part-high-protocol-event\ .jpg);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.inter-face::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 60%);
+  z-index: -1;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  max-width: 1600px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header .header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav :is(.nav__list, .nav__list li, .nav__btns) {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__btns .sponsor button {
+  background-color: #fff;
+  color: #1c1c44;
+}
+
+.nav__btns .join-us button {
+  background-color: #33367c;
+  color: white;
+}
+
+.nav__btns :is(.sponsor, .join-us) button {
+  transition: 0.2s ease-in-out;
+}
+
+.nav__btns .sponsor button:hover {
+  color: #1c1c44af;
+}
+
+.nav__btns .join-us button:hover {
+  color: #ccc;
+}
+
+/* main */
+/* First Section */
+.first-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.first-section .support-contact button:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* Second Section */
+.second-section .nested-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.second-section .image-box img {
+  border-radius: 8px;
+  width: 450px;
+}
+
+.second-section .benefits-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.second-section .benefits-box ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.second-section .benefits-box ul li i {
+  color: #3599a1;
+}
+
+.second-section .support-contact button {
+  color: #fff;
+  background-color: #333;
+}
+
+.second-section .support-contact button:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+/* Third Section */
+.packages-table {
+  box-shadow: 0 0 3px #3333334b;
+  overflow: auto;
+  border-radius: 6px;
+}
+
+.packages {
+  min-width: 1000px;
+  width: 100%;
+  border-spacing: 0;
+  position: relative;
+}
+
+.packages tr {
+  text-align: center;
+  transition: 0.3s;
+}
+
+.packages tr:hover {
+  background-color: #c4e4ff86;
+}
+
+.packages td {
+  padding: 16px;
+  border: thin solid #eee;
+}
+
+.packages :is(th, td) {
+  width: 300px;
+  max-width: 100%;
+}
+
+.packages thead th {
+  padding: 0.3rem;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  height: 45px;
+  letter-spacing: 1.2px;
+}
+
+.packages thead :where(.features, .plat, .gold, .silver) {
+  position: relative;
+}
+
+.packages thead .features {
+  background-color: #9cafaa;
+}
+
+.packages thead .plat {
+  background-color: #007f73;
+}
+
+.packages thead .gold {
+  background-color: goldenrod;
+}
+
+thead .silver {
+  background-color: silver;
+}
+
+.packages thead .features::before,
+.plat::before,
+.gold::before,
+.silver::before {
+  content: "";
+  position: absolute;
+  top: var(--p-t);
+  left: 145px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+}
+
+.packages thead .features::before {
+  border-top-color: #9cafaa;
+}
+
+.packages thead .plat::before {
+  border-top-color: #007f73;
+}
+
+.packages thead .gold::before {
+  border-top-color: goldenrod;
+}
+
+.packages thead .silver::before {
+  border-top-color: silver;
+}
+
+/* Section 4 */
+.fourth-section {
+  margin-top: clamp(50px, 5.5vw, 100px);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  box-shadow: 0 0 10px #ddd;
+  border-radius: 6px;
+}
+
+.fourth-section .form-field {
+  padding: 1rem;
+}
+
+.fourth-section .form-field form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fourth-section .user-input label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.fourth-section .form-field form :is(.employees, .chosen-card) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fourth-section .form-field form :is(.option, .card) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.fourth-section .form-field form :is(.option:hover, .card:hover) {
+  background-color: #c4e4ff86;
+}
+
+.fourth-section .form-field form input:not(input[type="radio"]) {
+  padding: 8px 16px;
+  border: none;
+  border-bottom: 1.5px solid rgb(234, 234, 234);
+  width: 100%;
+  letter-spacing: 1.5px;
+  border-radius: 4px;
+}
+
+.fourth-section :is(.employees, .chosen-card) label {
+  font-weight: bold;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.fourth-section button {
+  background-color: #33367c;
+  padding: 12px 24px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  width: fit-content;
+}
+
+.fourth-section .img-field img {
+  width: 650px;
+  border-radius: 6px;
+}
